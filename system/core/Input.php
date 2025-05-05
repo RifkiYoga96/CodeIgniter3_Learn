@@ -724,11 +724,10 @@ class CI_Input {
 		   NOTE: In PHP 5.4 get_magic_quotes_gpc() will always return 0 and
 		         it will probably not exist in future versions at all.
 		*/
-		if ( ! is_php('5.4') && get_magic_quotes_gpc())
-		{
-			$str = stripslashes($str);
-		}
-
+		if (function_exists('get_magic_quotes_gpc') && get_magic_quotes_gpc())
+{
+    	$str = stripslashes($str);
+}
 		// Clean UTF-8 if supported
 		if (UTF8_ENABLED === TRUE)
 		{
