@@ -22,18 +22,34 @@ class Pages extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('home');
+		$data['meta'] = [
+			'title' => 'Home'
+		];
+		$this->load->view('home',$data);
 	}
 
 	public function about()		
 	{
-		$this->load->view('Pe/about.php');
+		$data['meta'] = [
+			'title' => 'About Us'
+		];
+		$this->load->view('Pe/about.php',$data);
 	}
 	public function contact()		
 	{
-		if($this->input->method() == 'post'){
+		if($this->input->method() == 'post'){ //cek apakah methodnya post
 			print_r($this->input->post());
 		}
+		
+		$data['meta'] = [
+			'title' => 'Contact Us'
+		];
+
+		$this->load->view('_partials/head',$data);
+		$this->load->view('_partials/navbar.php',$data);
 		$this->load->view('contact.php');
+		$this->load->view('_partials/footer.php',$data);
 	}
 }
+
+
