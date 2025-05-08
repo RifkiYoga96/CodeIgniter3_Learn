@@ -33,7 +33,7 @@ class Pages extends CI_Controller {
 		$data['meta'] = [
 			'title' => 'About Us'
 		];
-		$this->load->view('Pe/about.php',$data);
+		$this->load->view('about.php',$data);
 	}
 	public function contact()		
 	{
@@ -45,10 +45,10 @@ class Pages extends CI_Controller {
 			'title' => 'Contact Us'
 		];
 
-		$this->load->view('_partials/head',$data);
-		$this->load->view('_partials/navbar.php',$data);
+		$this->load->view('templates/head',$data);
+		$this->load->view('templates/navbar.php',$data);
 		$this->load->view('contact.php');
-		$this->load->view('_partials/footer.php',$data);
+		$this->load->view('templates/footer.php',$data);
 	}
 }
 
