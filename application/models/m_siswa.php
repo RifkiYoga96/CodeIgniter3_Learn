@@ -7,5 +7,10 @@ class M_siswa extends CI_Model{
     public function insert_data($data){
         $this->db->insert('tb_siswa', $data);
     }   
+
+    public function delete_data($where){
+        $this->db->where($where);
+        $this->db->delete('tb_siswa');
+    }
 }
 ?>  

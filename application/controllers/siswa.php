@@ -24,5 +24,16 @@ class Siswa extends CI_Controller{
         $this->m_siswa->insert_data($data);
         redirect('siswa/index');
     }
+
+    public function hapus_aksi(){
+        if($this->input->post('id') == null){
+            redirect('siswa/index');
+        }
+        $id = $this->input->post('id',TRUE);
+
+        $where = ['id' => $id];
+        $this->m_siswa->delete_data($where);
+        redirect('siswa/index');
+    }
 }
 ?>
