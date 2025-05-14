@@ -38,7 +38,7 @@
                             </button>
                           <?php echo form_close(); ?>
 
-                          <a href="<?= site_url('siswa/edit/'.$s['id']); ?>" class="btn btn-primary btn-sm">
+                          <a href="<?= base_url('siswa/edit/'.$s['id']); ?>" class="btn btn-primary btn-sm">
                             <i class="fa fa-edit"></i>
                           </a>
                         </td>
@@ -48,40 +48,39 @@
         </table>
     </section>
 
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Input Data Siswa</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <?= form_open('siswa/tambah_aksi');  ?>
-          <div class="form-group">
-              <label for="recipient-name" class="col-form-label">Nama:</label>
-              <input type="text" class="form-control" id="recipient-name" name="nama">
-            </div>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Input Data Siswa</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <?= form_open('siswa/tambah_aksi');  ?>
             <div class="form-group">
-              <label for="message-text" class="col-form-label">NIM:</label>
-              <input type="text" class="form-control" id="message-text" name="nim">
-            </div>
-            <div class="form-group">
-              <label for="message-text" class="col-form-label">Tanggal Lahir:</label>
-              <input type="date" class="form-control" id="message-text" name="tgl_lahir">
-            </div>
-            <div class="form-group">
-              <label for="message-text" class="col-form-label">Jurusan:</label>
-              <input type="text" class="form-control" id="message-text" name="jurusan">
-            </div>
-            <button type="reset" class="btn btn-danger" data-dismiss="modal">Reset</button>
-            <button type="submit" class="btn btn-primary">Simpan</button>
-        <?= form_close(); ?>
+                <label for="recipient-name" class="col-form-label">Nama:</label>
+                <input type="text" class="form-control" id="recipient-name" name="nama">
+              </div>
+              <div class="form-group">
+                <label for="message-text" class="col-form-label">NIM:</label>
+                <input type="text" class="form-control" id="message-text" name="nim">
+              </div>
+              <div class="form-group">
+                <label for="message-text" class="col-form-label">Tanggal Lahir:</label>
+                <input type="date" class="form-control" id="message-text" name="tgl_lahir">
+              </div>
+              <div class="form-group">
+                <label for="message-text" class="col-form-label">Jurusan:</label>
+                <input type="text" class="form-control" id="message-text" name="jurusan">
+              </div>
+              <button type="reset" class="btn btn-danger" data-dismiss="modal">Reset</button>
+              <button type="submit" class="btn btn-primary">Simpan</button>
+          <?= form_close(); ?>
+        </div>
       </div>
     </div>
   </div>
-</div>
-
 </div>

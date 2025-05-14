@@ -12,5 +12,14 @@ class M_siswa extends CI_Model{
         $this->db->where($where);
         $this->db->delete('tb_siswa');
     }
+
+    public function get_data_by_id($id){
+        return $this->db->get_where('tb_siswa', ['id' => $id])->row_array();
+    }
+
+    public function update_data($data, $id){
+        $this->db->where('id', $id);
+        $this->db->update('tb_siswa', $data);
+    }
 }
 ?>  
